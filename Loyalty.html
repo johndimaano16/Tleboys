@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loyalty Program | TLE Boys</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: black;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #00BFFF;
+    }
+    .section {
+      padding: 220px 20px 50px 20px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .section-subtitle {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .card {
+      background-color: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      width: 85%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .card h2 {
+      color: #00BFFF;
+      margin-bottom: 10px;
+    }
+    .card ul {
+      padding-left: 20px;
+    }
+    .card input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .card button, .btn {
+      background-color: #00BFFF;
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      display: block;
+      margin: 10px 0;
+    }
+    .card button:hover, .btn:hover {
+      background-color: #009ACD;
+    }
+    footer {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbyaxixw2XJgOWhTIeRPvpAj9jAx6hCS9iFvHhuCBFB69IBXeXuo3UHPQW5SEFrzfF-zrdTg2akawAnhCbM_HLAv-v8pEvwsf28vwWdthikeJu5Y21jQki4inUa5BKSLrZpjv598OZjW4qTnLSOo1K6JcghZY5WM-FcFBli_T14KYNK2my8IWmNUgkRX3b/s320/3k.png" alt="TLE Boys Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="schedule.html">Book Now</a></li>
+        <li><a href="loyalty.html">Loyalty</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1 class="section-title">TLE Boys Loyalty Program</h1>
+      <p class="section-subtitle">Drive More, Save More</p>
+
+      <div class="card">
+        <h2>Join Now</h2>
+        <p>Sign up and generate your personalized TLE Boys Loyalty Card below.</p>
+        <form id="form">
+          <input type="text" name="first_name" placeholder="First Name" required />
+          <input type="text" name="last_name" placeholder="Last Name" required />
+          <input type="text" name="vehicle_info" placeholder="Year, Make, and Model" required />
+          <button type="submit">Generate Loyalty Card</button>
+        </form>
+        <canvas id="loyaltyCardCanvas" width="600" height="350" style="display: none; margin-top: 20px;"></canvas>
+        <a id="downloadLink" class="btn" style="display: none;" download="TLE-Loyalty-Card.png">Download Loyalty Card</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TLE Boys. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <!-- Add this inside the <script> section in loyalty.html -->
+<script>
+  document.getElementById('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const firstName = this.querySelector('input[name="first_name"]').value.trim();
+    const lastName = this.querySelector('input[name="last_name"]').value.trim();
+    const vehicle = this.querySelector('input[name="vehicle_info"]').value.trim();
+    if (!firstName || !lastName || !vehicle) return alert('Please complete all fields.');
+    generateCard(firstName, lastName, vehicle);
+  });
+
+  function generateCard(firstName, lastName, vehicle) {
+    const canvas = document.getElementById('loyaltyCardCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.style.display = 'block';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const logo = new Image();
+    logo.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEmGlUWHRY..." 
+
+
+    logo.onload = function () {
+      drawCard(firstName, lastName, vehicle, logo);
+    };
+
+    logo.onerror = function () {
+      drawCard(firstName, lastName, vehicle, null);
+    };
+  }
+
+  function drawCard(firstName, lastName, vehicle, logo) {
+    const canvas = document.getElementById('loyaltyCardCanvas');
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Watermark
+    if (logo) {
+      ctx.globalAlpha = 0.08;
+      const wmSize = 400;
+      ctx.drawImage(logo, canvas.width / 2 - wmSize / 2, canvas.height / 2 - wmSize / 2, wmSize, wmSize);
+      ctx.globalAlpha = 1.0;
+    }
+
+    ctx.fillStyle = '#00BFFF';
+    ctx.font = 'bold 24px sans-serif';
+    ctx.fillText('TLE Boys Loyalty Card', 20, 40);
+
+    ctx.fillStyle = '#333';
+    ctx.font = '18px sans-serif';
+    ctx.fillText(`Name: ${firstName} ${lastName}`, 20, 90);
+    ctx.fillText(`Vehicle: ${vehicle}`, 20, 120);
+    ctx.fillText('Earn 1 stamp per ₱1,000 service', 20, 160);
+    ctx.fillText('5 stamps = ₱300 off', 20, 190);
+    ctx.fillText('Complete 3 cards = VIP Perks', 20, 220);
+
+    ctx.font = 'bold 20px sans-serif';
+    ctx.fillText('Stamp Card:', 20, 260);
+    ctx.font = '30px Arial';
+    for (let i = 0; i < 5; i++) {
+      ctx.fillStyle = '#ccc';
+      ctx.fillText('★', 160 + i * 50, 265);
+    }
+
+    const link = document.getElementById('downloadLink');
+    link.href = canvas.toDataURL('image/png');
+    link.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
