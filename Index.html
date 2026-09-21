@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="TLE Boys Mobile Car Services — Professional mobile car care brought directly to your home or workplace. Oil changes, tires, brakes, detailing and more.">
+
+    <meta name="keywords" content="mobile mechanic, mobile car service, car detailing, oil change, tire service, brake service, Dallas car service, TLE Boys">
+
+    <meta name="author" content="TLE Boys Mobile Car Services">
+
+    <meta property="og:title" content="TLE Boys | Mobile Car Services">
+    <meta property="og:description" content="Professional car care brought directly to your doorstep.">
+    <meta property="og:type" content="website">
+
+    <title>TLE Boys | Mobile Car Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #050505;
+            --dark: #0c0c0f;
+            --dark-card: #141419;
+            --blue: #00bfff;
+            --blue-dark: #0097cc;
+            --white: #ffffff;
+            --gray: #a7a7ad;
+            --light: #f6f7f9;
+            --border: rgba(255,255,255,.10);
+            --shadow: 0 20px 50px rgba(0,0,0,.20);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: #171717;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(5,5,5,.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 82px;
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 115px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s ease;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .nav-book {
+            background: var(--blue);
+            padding: 11px 20px;
+            border-radius: 30px;
+            color: #fff !important;
+        }
+
+        .nav-book:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 140px 20px 90px;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.68)
+                ),
+                url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=2000&q=85')
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeUp .8s ease forwards;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 15px;
+
+            border: 1px solid rgba(0,191,255,.45);
+            background: rgba(0,191,255,.10);
+
+            color: #7cddff;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+
+            font-size: clamp(42px, 7vw, 76px);
+
+            line-height: 1.05;
+
+            font-weight: 800;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero p {
+            color: #ddd;
+
+            font-size: clamp(17px, 2vw, 21px);
+
+            max-width: 650px;
+
+            margin: 0 auto 34px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 15px 28px;
+
+            border-radius: 50px;
+
+            font-weight: 700;
+            font-size: 15px;
+
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+
+            box-shadow: 0 10px 30px rgba(0,191,255,.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,191,255,.35);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.35);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: black;
+            transform: translateY(-3px);
+        }
+
+        .hero-trust {
+            margin-top: 45px;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        .hero-trust span {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .check {
+            color: var(--blue);
+            font-weight: 800;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .eyebrow {
+            color: var(--blue-dark);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(30px, 5vw, 45px);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: var(--light);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 18px;
+            padding: 30px 24px;
+
+            transition: .3s ease;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: .3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eafaff;
+            color: var(--blue-dark);
+
+            border-radius: 15px;
+
+            font-size: 25px;
+
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #707070;
+            font-size: 14px;
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: var(--blue-dark);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           WHY US
+        ========================= */
+
+        .why-us {
+            background: var(--dark);
+            color: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .why-content .eyebrow {
+            color: var(--blue);
+        }
+
+        .why-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .why-content > p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 13px;
+        }
+
+        .benefit-icon {
+            color: var(--blue);
+            font-size: 20px;
+        }
+
+        .benefit h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .benefit p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .why-image {
+            min-height: 450px;
+            border-radius: 25px;
+
+            background:
+                linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+                url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=85')
+                center/cover;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 420px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)),
+                url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=85')
+                center/cover;
+        }
+
+        .about-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .about-highlight {
+            border-left: 3px solid var(--blue);
+            padding-left: 18px;
+            margin-top: 30px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 90px 20px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #007da8,
+                    #00bfff
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 5vw, 50px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,.88);
+        }
+
+        .cta .btn {
+            background: white;
+            color: #007da8;
+        }
+
+        .cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.2);
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .contact-card .icon {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            font-size: 16px;
+            margin-bottom: 7px;
+        }
+
+        .contact-card a {
+            color: var(--blue-dark);
+            font-weight: 600;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+            color: white;
+            padding: 55px 20px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+            width: 115px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        footer h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: #999;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: auto;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            padding-top: 22px;
+
+            text-align: center;
+        }
+
+        /* =========================
+           MOBILE BOOK BUTTON
+        ========================= */
+
+        .mobile-book {
+            display: none;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .why-image {
+                min-height: 350px;
+                order: -1;
+            }
+
+            .about-image {
+                min-height: 350px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                position: absolute;
+            }
+
+            .navbar {
+                height: 75px;
+                justify-content: center;
+            }
+
+            .logo img {
+                width: 105px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+                min-height: 100svh;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-trust {
+                gap: 12px;
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 75px 18px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .mobile-book {
+                display: flex;
+
+                position: fixed;
+                bottom: 18px;
+                left: 18px;
+                right: 18px;
+
+                z-index: 999;
+
+                background: var(--blue);
+                color: white;
+
+                padding: 15px;
+
+                border-radius: 50px;
+
+                align-items: center;
+                justify-content: center;
+
+                font-weight: 800;
+
+                box-shadow: 0 10px 30px rgba(0,0,0,.3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbyaxixw2XJgOWhTIeRPvpAj9jAx6hCS9iFvHhuCBFB69IBXeXuo3UHPQW5SEFrzfF-zrdTg2akawAnhCbM_HLAv-v8pEvwsf28vwWdthikeJu5Y21jQki4inUa5BKSLrZpjv598OZjW4qTnLSOo1K6JcghZY5WM-FcFBli_T14KYNK2my8IWmNUgkRX3b/s320/3k.png"
+                alt="TLE Boys Mobile Car Services Logo"
+            >
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="loyalty.html">Loyalty</a></li>
+                <li>
+                    <a href="schedule.html" class="nav-book">
+                        Book Now
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ● MOBILE AUTO SERVICE
+        </div>
+
+        <h1>
+            Professional Car Care.
+            <span>Right at Your Door.</span>
+        </h1>
+
+        <p>
+            Skip the shop and let TLE Boys bring professional automotive
+            services directly to your home, workplace, or driveway.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="schedule.html" class="btn btn-primary">
+                Book a Service →
+            </a>
+
+            <a href="tel:4698471799" class="btn btn-outline">
+                Call 469-847-1799
+            </a>
+
+        </div>
+
+        <div class="hero-trust">
+
+            <span>
+                <b class="check">✓</b>
+                Convenient Mobile Service
+            </span>
+
+            <span>
+                <b class="check">✓</b>
+                Professional Care
+            </span>
+
+            <span>
+                <b class="check">✓</b>
+                We Come To You
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                What We Do
+            </div>
+
+            <h2>
+                Automotive Services Without the Shop
+            </h2>
+
+            <p>
+                From routine maintenance to keeping your vehicle looking its
+                best, TLE Boys makes car care easier and more convenient.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🧽
+                </div>
+
+                <h3>
+                    Mobile Car Wash
+                </h3>
+
+                <p>
+                    Convenient car washing at your home or workplace.
+                </p>
+
+                <a href="services.html" class="service-link">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Detailing
+                </h3>
+
+                <p>
+                    Interior and exterior detailing to keep your vehicle
+                    looking its best.
+                </p>
+
+                <a href="services.html" class="service-link">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Oil & Maintenance
+                </h3>
+
+                <p>
+                    Routine oil changes and maintenance performed at your
+                    location.
+                </p>
+
+                <a href="services.html" class="service-link">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Tire Services
+                </h3>
+
+                <p>
+                    Convenient tire services without the hassle of visiting
+                    a traditional shop.
+                </p>
+
+                <a href="services.html" class="service-link">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY TLE BOYS
+========================= -->
+
+<section class="section why-us">
+
+    <div class="container">
+
+        <div class="why-grid">
+
+            <div class="why-content">
+
+                <div class="eyebrow">
+                    Why TLE Boys
+                </div>
+
+                <h2>
+                    Your Car. Your Location. Your Schedule.
+                </h2>
+
+                <p>
+                    We built TLE Boys around one simple idea:
+                    taking care of your vehicle shouldn't require
+                    rearranging your entire day.
+                </p>
+
+
+                <div class="benefits">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">✓</div>
+
+                        <div>
+                            <h3>We Come To You</h3>
+                            <p>No waiting rooms or shop visits.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">✓</div>
+
+                        <div>
+                            <h3>Convenient Booking</h3>
+                            <p>Choose a time that works for you.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">✓</div>
+
+                        <div>
+                            <h3>Professional Service</h3>
+                            <p>Your vehicle deserves proper care.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">✓</div>
+
+                        <div>
+                            <h3>Simple & Easy</h3>
+                            <p>Book, relax, and let us handle the work.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-image"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image"></div>
+
+
+            <div class="about-content">
+
+                <div class="eyebrow">
+                    About TLE Boys
+                </div>
+
+                <h2>
+                    Built Around Convenience.
+                </h2>
+
+                <p>
+                    TLE Boys Mobile Car Services was founded by
+                    John Dimaano with a simple goal: make quality
+                    vehicle care more convenient for everyday drivers.
+                </p>
+
+                <p>
+                    Instead of spending hours at an automotive shop,
+                    customers can schedule service and have us come
+                    directly to them.
+                </p>
+
+                <div class="about-highlight">
+                    Professional automotive care, wherever you need it.
+                </div>
+
+                <br>
+
+                <a href="aboutus.html" class="btn btn-primary">
+                    Meet TLE Boys →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Ready to Take Care of Your Car?
+        </h2>
+
+        <p>
+            Schedule your mobile service today and let TLE Boys
+            come to you.
+        </p>
+
+        <a href="schedule.html" class="btn">
+            Book Your Service →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Get In Touch
+            </div>
+
+            <h2>
+                Let's Take Care of Your Vehicle
+            </h2>
+
+            <p>
+                Have a question or ready to schedule?
+                We're here to help.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    📞
+                </div>
+
+                <h3>
+                    Call Us
+                </h3>
+
+                <a href="tel:4698471799">
+                    469-847-1799
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">
+                    ✉️
+                </div>
+
+                <h3>
+                    Email Us
+                </h3>
+
+                <a href="mailto:tleboysservices@gmail.com">
+                    tleboysservices@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <img
+                class="footer-logo"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbyaxixw2XJgOWhTIeRPvpAj9jAx6hCS9iFvHhuCBFB69IBXeXuo3UHPQW5SEFrzfF-zrdTg2akawAnhCbM_HLAv-v8pEvwsf28vwWdthikeJu5Y21jQki4inUa5BKSLrZpjv598OZjW4qTnLSOo1K6JcghZY5WM-FcFBli_T14KYNK2my8IWmNUgkRX3b/s320/3k.png"
+                alt="TLE Boys"
+            >
+
+            <p>
+                Professional mobile car services brought directly
+                to your doorstep.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <div class="footer-links">
+
+                <a href="services.html">Services</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="loyalty.html">Loyalty Program</a>
+                <a href="schedule.html">Book Now</a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <div class="footer-links">
+
+                <a href="tel:4698471799">
+                    469-847-1799
+                </a>
+
+                <a href="mailto:tleboysservices@gmail.com">
+                    tleboysservices@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © 2026 TLE Boys Mobile Car Services.
+            All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- MOBILE BOOKING BUTTON -->
+
+<a href="schedule.html" class="mobile-book">
+    🚗 &nbsp; Book a Service
+</a>
+
+
+<!-- TIDIO -->
+
+<script
+    src="//code.tidio.co/dckmhcx81qmpsb7ronjjqg06ut6y0vwm.js"
+    async>
+</script>
+
+</body>
+</html>
